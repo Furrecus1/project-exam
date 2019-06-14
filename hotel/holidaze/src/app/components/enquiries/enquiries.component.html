@@ -1,0 +1,31 @@
+<h2>Enquiries</h2>
+<h3>Most recent enquiries first</h3>
+<div class="enquiries--grid">
+    <div *ngFor="let enquiry of enquiries?.reverse()" class="enquiries">
+
+        <div class="enquiries__item">
+            <p class="enquiries__name"><b>Establishment name: </b></p>
+            <p class="enquiries__post">{{ enquiry.establishment }}</p>
+        </div>
+      
+        <div class="enquiries__item enquiries__item--darken">
+            <p class="enquiries__name"><b>Clients name: </b></p>
+            <p class="enquiries__post">{{ enquiry.clientName }}</p>
+        </div>
+      
+        <div class="enquiries__item">
+            <p class="enquiries__name"><b>Clients email: </b></p>
+            <p class="enquiries__post">{{ enquiry.email }}</p>
+        </div>
+      
+        <div class="enquiries__item enquiries__item--darken">
+            <p class="enquiries__name"><b>Check in: </b></p>
+            <p class="enquiries__post">{{ enquiry.checkin }}</p>
+        </div>
+      
+        <div class="enquiries__item">
+            <p class="enquiries__name"><b>Check out: </b></p>
+            <p class="enquiries__post">{{ enquiry.checkout }}</p>
+        </div>
+  </div>
+</div>

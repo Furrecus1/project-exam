@@ -1,0 +1,28 @@
+<div class="contact">
+  <h2 class="contact__title">Contact Holidaze</h2>
+    <form method="POST" ngNoForm action="http://localhost/hotel/server/contact-success.php" class="contact__form" name="myForm">
+      <label for="clientName" class="contact__label">Full name
+        <input type="text" name="clientName" id="clientName" class="contact__input" (keyup)="nameValidation()">
+        <div *ngIf="nameError">
+          <p class="contact__error">Please fill in you name</p>
+        </div>
+      </label>
+
+      <label for="email" class="contact__label" >Email Address
+        <input type="text" name="email" id="email" class="contact__input" (keyup)="emailValidation()">
+        <div *ngIf="emailError">
+          <p class="contact__error">Please fill in you email</p>
+        </div>
+      </label>
+    
+      <label for="message" class="contact__label">Message
+        <textarea name="message" id="message" rows="8" cols="80" class="contact__area" (keyup)="messageValidation()"></textarea>
+        <div *ngIf="messageError">
+            <p class="contact__error">Did you forget to write a message?</p>
+          </div>
+      </label>
+    
+      <input type="submit" value="Send message" class="contact__submit" (click)="formValidation()">
+    </form>
+</div>
+

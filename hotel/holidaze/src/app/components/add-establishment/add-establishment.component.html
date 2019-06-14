@@ -1,0 +1,85 @@
+<h2>Add establishment</h2>
+
+<div class="establishment">
+  <h3 class="establishment__title">Add establishment</h3>
+    <form method="POST" ngNoForm action="http://localhost/hotel/server/add-establishments-success.php" class="establishment__form" name="myForm">
+
+      <label for="establishmentName" class="establishment__label">Establishment name
+        <input type="text" name="establishmentName" id="establishmentName" class="establishment__input" (keyup)="nameValidation()">
+        <div *ngIf="nameError">
+            <p class="establishment__error">Please fill in the establishment name</p>
+        </div>
+      </label>
+      
+      <label for="establishmentEmail" class="establishment__label">Establishment email
+        <input type="text" name="establishmentEmail" id="establishmentEmail" class="establishment__input" (keyup)="emailValidation()">
+        <div *ngIf="emailError">
+            <p class="establishment__error">Please fill in the establishment email</p>
+        </div>
+      </label>
+      
+      <label for="imageUrl" class="establishment__label">Image URL (I got a placeholder image)
+        <input type="text" name="imageUrl" id="imageUrl" class="establishment__input" (keyup)="urlValidation()" value="https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"> 
+        <div *ngIf="urlError">
+            <p class="establishment__error">Please fill in the establishment image URL</p>
+        </div>
+      </label>
+      
+      <label for="price" class="establishment__label">Price per person per night ($)
+        <input type="number" name="price" id="price" class="establishment__input" (keyup)="priceValidation()">
+        <div *ngIf="priceError">
+            <p class="establishment__error">Please fill in the price</p>
+        </div>
+      </label>
+      
+      <label for="maxGuests" class="establishment__label">Max guests
+        <input type="number" name="maxGuests" id="maxGuests" class="establishment__input" (keyup)="guestValidation()">
+        <div *ngIf="guestError">
+            <p class="establishment__error">Please fill in the maximum of guests</p>
+        </div>
+      </label>
+      
+      <label for="googleLat" class="establishment__label">Google coordinates latitude
+        <input type="text" name="googleLat" id="googleLat" class="establishment__input" (keyup)="latValidation()">
+        <div *ngIf="latError">
+            <p class="establishment__error">Please fill in latitude</p>
+        </div>
+      </label>
+      
+      <label for="googleLong" class="establishment__label">Google coordinates longitude
+        <input type="text" name="googleLong" id="googleLong" class="establishment__input" (keyup)="longValidation()">
+        <div *ngIf="longError">
+          <p class="establishment__error">Please fill in longitude</p>
+        </div>
+      </label>
+      
+      <label for="description" class="establishment__label">Description
+        <input type="text" name="description" id="description" class="establishment__input establishment__input--big" (keyup)="descriptValidation()">
+        <div *ngIf="descriptError">
+          <p class="establishment__error">Please fill in a description</p>
+        </div>
+      </label>
+      
+      <label class="establishment__label" for="selfCatering">Self-catering</label>
+
+        <label for="true" class="establishment__label--radio">True
+          <input class="establishment__radio" type="radio" id="true" name="selfCatering" value="true" required>
+        </label>  
+
+        <label for="false" class="establishment__label--radio">False
+          <input class="establishment__radio" type="radio" id="false" name="selfCatering" value="false" required> 
+        </label>
+     
+      
+      <label for="id" class="establishment__label">ID
+        <input type="number" name="id" id="id" class="establishment__input" (keyup)="idValidation()">
+        <div *ngIf="idError">
+          <p class="establishment__error">Please fill in an ID</p>
+        </div>
+      </label>
+      
+      <input type="submit" value="Add establishment" class="establishment__submit" (click)="formValidation()">
+    </form>
+</div>
+
+  

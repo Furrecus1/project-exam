@@ -1,0 +1,16 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+
+.about{
+    height: 60vh;
+    font-weight: bold;
+    .about__link{
+        background-color: $orange-color;
+        font-family: $logo-font;
+        padding: 8px 30px;
+        border-radius: 4px;
+        margin-top: 20px;
+        float: right;
+        font-weight: 400;
+    }
+}

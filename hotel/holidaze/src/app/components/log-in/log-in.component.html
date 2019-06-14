@@ -1,0 +1,17 @@
+<div class="login">
+    <form [formGroup]="form" (ngSubmit)="userDetails(form.value)" class="login__form">
+        <h1 class="login__title">Admin login</h1>
+
+      <label for="username" class="login__label">Username
+        <input type="text" formControlName="username" class="login__input">
+        <span class="login__errors" *ngIf="isUsername">Please enter a correct username</span>
+      </label>
+
+      <label for="password" class="login__label">Password
+        <input type="password" formControlName="password" class="login__input">
+        <span class="login__errors" *ngIf="isPassword">Please enter a correct Password</span>
+      </label>
+      
+      <button type="Submit" class="login__submit">Login</button>
+    </form>
+</div>

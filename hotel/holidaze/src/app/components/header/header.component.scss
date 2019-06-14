@@ -1,0 +1,105 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+
+header{
+    height: 60px;
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    @include shadow($shadow-1);
+    @include gradient(10deg, $primary-color, $secondary-color);
+    @include screen-3 {
+       height: 80px;
+    }
+    .width-cont{
+        @include screen-3 {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo{
+            float: left;
+            @include screen-3 {
+                margin-top: 6px; 
+             }
+            .logo__link{
+                font-family: $logo-font;
+                font-size: 38px;
+                padding: 0px 0px 0px 10px;
+               
+                @include screen-3 {
+                    font-size: 46px; 
+                    padding-left: 20px;
+                 }
+                .logo__link--orange{
+                    color: $orange-color;
+                }
+            }
+        }
+        .hamburger-icon{
+            color: white;
+            float: right;
+            font-size: 26px;
+            padding: 8px; 
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            &:hover{
+                background-color: $orange-color;
+            }
+        }
+        .nav{
+            z-index: 9;
+            @include gradient(10deg, $primary-color, $secondary-color);
+            font-family: $logo-font;
+            clear: both;
+            @include shadow($shadow-1);
+            @include screen-3 {
+                background: none;
+                clear: none;
+                float: right;
+                position: relative;
+                box-shadow: none;
+            }
+            .nav__list{
+                list-style: none;
+                padding: 20px 0;
+                font-size: 18px;
+                @include screen-3 {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-pack: end;
+                    -ms-flex-pack: end;
+                    justify-content: flex-end;
+                    padding: 0px;
+                    margin: 16px 0;
+                }
+                .nav__link{
+                    display: block;
+                    padding: 10px 20px 10px 20px;
+                    &:hover{
+                        background-color: $orange-color;
+                    }
+                    @include screen-3 {
+                        padding: 10px 20px;
+                        margin-top: 0px;
+                        border-radius: 4px;
+                    }
+                }
+                .nav__link--login{
+                    text-decoration: underline;
+                   
+                    @include screen-3 {  
+                       
+                        &:hover{
+                            background:none;
+                            color: $orange-color;
+                        }    
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,20 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+.spes-card{
+    .spes-card__img-div{
+        padding: 10px;
+        @include gradient(10deg, $primary-color, $secondary-color);
+        border-radius: 4px;
+        @include tablet-size{
+            padding: 20px;
+        }
+        .spes-card__img{
+            display: block;
+            width: 100%;
+            max-height: 600px;
+            -o-object-fit: cover;
+            object-fit: cover;
+            border-radius: 4px;    
+        }
+    }  
+}

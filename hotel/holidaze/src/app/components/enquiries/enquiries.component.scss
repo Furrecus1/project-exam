@@ -1,0 +1,43 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+
+
+  
+.enquiries{
+    @include gradient(10deg, $primary-color, $secondary-color);
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    @include screen-2{
+        margin-bottom: 0px;
+        @include shadow($shadow-1);
+    }
+    .enquiries__item{
+        padding: 10px;
+        font-size: 14px;
+        .enquiries__name{
+            margin: 0;
+            margin-bottom: 4px;
+        }
+        .enquiries__post{
+            margin: 0;
+        }  
+    }
+    .enquiries__item--darken{
+        background-color: rgba(0,0,0,0.2);
+    }
+}
+.enquiries--grid{
+    @include screen-2{
+        display: -ms-grid;
+         display: grid;
+        -ms-grid-columns: 1fr 10px 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    @include desktop{
+        -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+    }
+}

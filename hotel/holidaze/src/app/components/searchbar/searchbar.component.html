@@ -1,0 +1,30 @@
+<form (clickOutside)="onClickedOutside($event)" class="searchbar">
+  <div class="searchbar--pos-rel">
+
+    <div class="searchbar--flex">
+      <input [(ngModel)]="term" class="searchbar__input" name="search" placeholder="Search accommodations, try buena vista" (keydown)="keydownInput()" (click)="toggleDropDown()" type='text' autocomplete="off">
+      <div class="searchbar__icon" (click)="toggleDropDown()">
+        <i class="fa fa-search"></i>
+      </div>
+    </div>
+
+    <div *ngIf="showDropDown" class="searchbar__dropdown">
+        <div *ngFor="let s of accommodations | filter:term">
+
+            <a class="searchbar__link" routerLink="/spes-accommodations-page/{{ s.id }}">
+              
+              <div class="searchbar__leftside">
+                <p class="searchbar__name">{{ s.establishmentName }}</p>
+                <p class="searchbar__price">{{ s.price }}$ per night</p>
+                <a class="searchbar__btn">View more</a>
+              </div>  
+
+              <div class="searchbar__img--crop">
+                <img class="searchbar__img" [src]="s.imageUrl"> 
+              </div>
+            </a>
+          
+        </div>
+    </div>
+  </div>
+</form>

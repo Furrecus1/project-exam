@@ -1,0 +1,15 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+
+.spes-map{
+    padding: 10px;
+    @include gradient(10deg, $primary-color, $secondary-color);
+    border-radius: 4px;
+    @include tablet-size{
+        padding: 20px;
+    }
+    .spes-map__map{
+        height: 300px;
+        border-radius: 4px;
+    }
+}

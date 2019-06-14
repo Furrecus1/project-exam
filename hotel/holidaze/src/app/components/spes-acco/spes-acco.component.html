@@ -1,0 +1,20 @@
+<div class="spes-card" *ngIf="establishment">
+   
+ 
+    
+    <h1 class="spes-card__name">{{ establishment.establishmentName }}</h1>
+    <div class="spes-card__img-div">
+      <img [src]="establishment.imageUrl" class="spes-card__img">
+   </div>
+    <h2 class="spes-card__name--small">{{ establishment.establishmentName }}</h2>  
+    <p class="spes-card__email">{{ establishment.establishmentEmail }}</p>
+    <p class="spes-card__price"><b>Price per person per night:</b> {{ establishment.price }}$</p>
+    <p class="spes-card__guest"><b>Max guests:</b> {{ establishment.maxGuests }}</p>
+    <p class="spes-card__catering"><b>Self catering:</b> {{ catering }}</p>
+    <p class="spes-card__description"><b>Description:</b> {{ establishment.description }}</p>
+   
+    
+  
+
+
+</div>

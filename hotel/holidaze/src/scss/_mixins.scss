@@ -1,0 +1,54 @@
+$desktop: 950px;
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+$screen-3: 820px;
+
+@mixin screen-3{
+    @media (min-width: #{$screen-3}) {
+        @content;
+    }
+}
+$tablet-size: 780px;
+
+@mixin tablet-size {
+    @media (min-width: #{$tablet-size}) {
+        @content;
+    }
+}
+$screen-2: 580px;
+
+@mixin screen-2 {
+    @media (min-width: #{$screen-2}) {
+        @content;
+    }
+}
+
+$screen-1: 400px;
+
+@mixin screen-1 {
+    @media (min-width: #{$screen-1}) {
+        @content;
+    }
+}
+
+$smallest: 330px;
+
+@mixin smallest {
+    @media (min-width: #{$smallest}) {
+        @content;
+    }
+}
+
+@mixin gradient($p1, $p2, $p3) {
+    -webkit-linear-gradient: $p1, $p2, $p3;
+    -o-linear-gradient: $p1, $p2, $p3;
+    background: linear-gradient($p1, $p2, $p3);
+}
+@mixin shadow($p1) {
+    -webkit-box-shadow: $p1;
+    box-shadow: $p1;
+}

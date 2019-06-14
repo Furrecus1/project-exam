@@ -1,0 +1,36 @@
+<div class="enquiry" *ngIf="establishment">
+
+  <h3 class="enquiry__title">Rent {{ establishment.establishmentName }}</h3>
+
+  <form method="POST" ngNoForm action="http://localhost/hotel/server/enquiry-success.php" class="enquiry__form" name="myForm">
+  
+    <label style="display: none" for="establishment">Establishment
+      <input type="text" name="establishment" id="establishment" value="{{ establishment.establishmentName }}" readonly>
+    </label>
+
+    <label for="clientName" class="enquiry__label">Full name
+      <input type="text" name="clientName" id="clientName" class="enquiry__input" (keyup)="nameValidation()">
+      <div *ngIf="nameError">
+        <p class="enquiry__error">Please fill in your full name</p>
+      </div>
+    </label>
+    <label for="email" class="enquiry__label">Email Address
+      <input type="text" name="email" id="email" class="enquiry__input" (keyup)="emailValidation()">
+      <div *ngIf="emailError">
+        <p class="enquiry__error">Please fill in your email</p>
+      </div>
+    </label>
+    <div class="enquiry__check--grid">
+      <label for="checkin" class="enquiry__label enquiry__label--check">Check-in
+        <input type="date" name="checkin" id="checkin" class="enquiry__input" required>
+      </label>
+      <label for="checkout" class="enquiry__label enquiry__label--check">Check-out
+        <input type="date" name="checkout" id="checkout" class="enquiry__input" required>
+      </label>
+    </div>
+    <input type="submit" class="enquiry__submit" value="Send request" (click)="formValidation()">
+  </form>
+</div>
+
+
+

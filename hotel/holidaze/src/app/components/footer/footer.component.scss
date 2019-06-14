@@ -1,0 +1,29 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+
+.footer {
+    @include gradient(10deg, $primary-color, $secondary-color);
+    height: 200px;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    font-weight: bold;
+    .logo__link{
+        font-family: $logo-font;
+        font-size: 38px;
+        font-weight: 400;
+        .logo__link--orange{
+            color: $orange-color;
+        }
+    }
+    .footer__link{
+        padding: 10px;
+        font-size: 22px;
+        margin: 10px 0 10px 0;
+        &:hover{
+            color: $orange-color;
+        }
+
+    }
+}
+    

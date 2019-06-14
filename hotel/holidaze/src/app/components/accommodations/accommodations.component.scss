@@ -1,0 +1,57 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+.acco-card{
+    text-align: center;
+    margin: 10px 0;
+    padding-bottom: 20px;
+    background: linear-gradient(10deg, $primary-color, $secondary-color);
+    color: white;
+    border-radius: 4px;
+    @include screen-2{
+        display:-ms-grid;
+        display:grid;
+        -ms-grid-columns:  2fr 1fr;
+        grid-template-columns:  2fr 1fr;
+        padding: 0;
+        margin: 10px 0px;
+    }
+    @include tablet-size{
+        margin: 20px 0px;
+    }
+    .acco-card__img{
+        display: block;
+        width: 100%;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        height: 200px;
+        object-fit: cover;
+        @include screen-2{
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border-top-right-radius: 0px;         
+            height: 400px;
+        }
+    }
+    .acco-card__name{
+        margin: 12px 0;
+        @include screen-2{
+           height: 280px;
+           font-size: 1.5em;
+        }
+    }
+    .acco-card__price{
+        margin: 15px 0;
+    }
+    .acco-card__btn{
+        display: block;
+        background-color: $orange-color;
+        font-family: $logo-font;
+        padding: 6px;
+        border-radius: 4px;
+        margin: 0 20px 0px 20px;
+        &:hover{
+            color: $orange-color;
+            background: white;
+        }
+    }
+}

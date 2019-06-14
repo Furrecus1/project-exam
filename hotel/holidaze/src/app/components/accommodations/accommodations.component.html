@@ -1,0 +1,14 @@
+<div class="acco-card" *ngFor="let accommodation of accommodations">
+
+  <div>
+    <img [src]="accommodation.imageUrl" width="100%;" class="acco-card__img">  
+  </div>
+
+  <div class="acco-card__info">
+    <h3 class="acco-card__name">{{ accommodation.establishmentName }}</h3>
+    <p class="acco-card__price"><b>Price:</b> {{ accommodation.price }}$</p>
+    <a routerLink="/spes-accommodations-page/{{ accommodation.id }}" class="acco-card__btn">View more</a>
+  </div>
+
+</div>
+

@@ -1,0 +1,22 @@
+<header (clickOutside)="onClickedOutside($event)" (window:resize)="tabletSize($event)">
+  <div class="width-cont">
+    <div class="logo">
+      <a routerLink="/" class="logo__link">Holi<span class="logo__link--orange">daze</span></a>
+    </div> 
+
+    <div class="hamburger-icon" *ngIf="hamburgerIcon" (click)="toggleDropDown()" autocomplete="off">
+      <i class="fa fa-bars"></i>
+    </div>
+
+    <nav class="nav" *ngIf="showDropDown">
+      <ul class="nav__list" (click)="toggleOff()">
+        <li class="nav__item"><a routerLink="/" class="nav__link">Home</a></li>
+        <li class="nav__item"><a routerLink="/accommodations-page" class="nav__link">Accommodations</a></li>
+        <li class="nav__item"><a routerLink="/about-page" class="nav__link">About</a></li>
+        <li class="nav__item"><a routerLink="/contact-page" class="nav__link">Contact us</a></li>
+        <li class="nav__item"><a routerLink="/login-page" class="nav__link nav__link--login">Log in</a></li>
+      </ul>
+    </nav>
+
+</div>
+</header>

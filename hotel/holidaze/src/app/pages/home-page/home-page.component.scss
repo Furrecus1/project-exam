@@ -1,0 +1,55 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+.background--darken{
+    background-color:black;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -2;
+
+    .background{
+        background-image: url("../../../assets/images/sunset.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        opacity: 0.5;
+        position: absolute;
+        z-index: -1;
+    }   
+}
+
+.cta{
+    z-index: 1;
+    padding-top: 60px;
+    color: white;
+    text-align: center;
+    height: 80vh;
+    @include tablet-size{
+        padding-top: 100px;
+    }
+    .cta__title{
+        background: none;
+        margin: 0;
+        padding: 30px 10px;
+        @include tablet-size{
+            font-size: 56px;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+        }
+    }
+    .cta__link{
+        padding: 6px 14px;
+        background-color: $orange-color;
+        font-family: $logo-font;
+        border-radius: 4px;
+        @include tablet-size{
+            padding: 8px 40px;
+        }
+        &:hover{
+            color:$orange-color;
+            background-color: white;
+        }
+    }
+}

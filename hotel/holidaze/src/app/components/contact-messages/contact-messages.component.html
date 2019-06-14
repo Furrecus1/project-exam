@@ -1,0 +1,19 @@
+<h2>Contact messages</h2>
+<h3>Most recent messages first</h3>
+<div class="contact-message--grid">
+    <div *ngFor="let message of messages?.reverse()" class="contact" >
+        <div class="contact__item">
+            <p class="contact__name"><b>Client name: </b></p>
+            <p class="contact__post">{{ message.clientName }}</p>
+        </div>
+        <div class="contact__item contact__item--darken">
+            <p class="contact__name"><b>Client email: </b></p>
+            <p class="contact__post">{{ message.email }}</p>
+        </div>
+        <div class="contact__item contact__item--overflow">
+            <p class="contact__name"><b>Message: </b></p>
+            <p class="contact__post">{{ message.message }}</p>
+        </div>       
+    </div>
+</div>
+

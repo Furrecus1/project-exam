@@ -1,0 +1,54 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+
+.contact-message--grid{
+    @include screen-2{
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    @include desktop{
+        -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+    }
+    .contact{
+        @include gradient(10deg, $primary-color, $secondary-color);
+        color: white;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        height: 250px;
+        
+        @include screen-2{
+            margin-bottom: 0px;
+            @include shadow($shadow-1);
+        }
+        .contact__item{
+            padding: 10px;
+            font-size: 14px;
+            .contact__name{
+                margin: 0;
+                margin-bottom: 4px;
+            }
+            .contact__post{
+                margin: 0;
+            }  
+        }
+        .contact__item--overflow{
+            height: 100px;
+            overflow: auto;
+            
+        }
+        .contact__item--darken{
+            background-color: rgba(0,0,0,0.2);
+        }
+       
+    }
+
+}
+
+
+  
+

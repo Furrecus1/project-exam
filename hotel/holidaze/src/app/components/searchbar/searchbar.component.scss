@@ -1,0 +1,136 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+
+.searchbar {
+    @include gradient(10deg, $primary-color, $secondary-color);
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px;
+    .searchbar--pos-rel{
+        position: relative;
+    }
+    .searchbar--flex{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        .searchbar__input{
+            padding: 10px;
+            border-radius: 4px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            border: none;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px; 
+            color: $primary-color;    
+        }
+        .searchbar__icon{
+            width: 40px;
+            border: 1px solid white;
+            font-size: 22px;
+            color: $orange-color;
+            text-align: center;
+            background-color: white;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-top: 2px;
+            cursor: pointer;
+        }
+    }
+    .searchbar__dropdown{
+        @include gradient(10deg, $primary-color, $secondary-color);
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        max-height: 400px;
+        text-align: center;
+        color: white;
+        overflow: auto;
+        @include shadow($shadow-1);
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        .searchbar__link{
+            display: block;
+            padding: 10px;
+            border-bottom: 2px solid white;
+            &:hover{
+                background-color: $orange-color;
+            }
+            &:hover .searchbar__btn{
+                background-color: white;
+                color: $orange-color;
+            }
+            @include screen-2{
+                display: -ms-grid;
+                display: grid;
+                -ms-grid-columns:  1fr 10px 1fr;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 10px;
+            }
+            .searchbar__name{
+                font-weight: bold;
+                margin: 0px;
+                font-size: 18px;
+                margin-bottom: 10px;
+                @include screen-2{
+                margin-bottom: 20px;
+                font-size: 24px;
+                }
+            }
+            .searchbar__price{
+                margin: 0;
+                margin-bottom: 10px;
+                @include screen-2{
+                   margin-bottom: 33px;
+                }
+            }
+            .searchbar__btn{
+                display: block;
+                background-color: $orange-color;
+                padding: 6px;
+                margin-bottom: 10px;
+                font-family: $logo-font;
+                border-radius: 4px;
+                @include screen-2{
+                    margin-bottom: 0px;
+                } 
+            }
+            .searchbar__img{
+                display: block;
+                -o-object-fit: cover;
+                 object-fit: cover;
+                border-radius: 4px;
+                width:  100%;
+                height: 140px;  
+            }
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+  }
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white; 
+    
+  }
+::-webkit-scrollbar-thumb {
+    background: $orange-color; 
+    border-radius: 4px;
+  }
+  input[type="text"]{
+      font-size: 12px;
+      
+  }
+  ::placeholder { 
+    color: $primary-color;
+    opacity: 1; 
+  }
+  :-ms-input-placeholder  { 
+    color: $primary-color;
+  }
+  
+  ::-ms-input-placeholder { 
+    color: $primary-color;
+  }
